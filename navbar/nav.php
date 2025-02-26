@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="../index.php">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="usuariosDropdown" role="button"
@@ -17,12 +17,7 @@
                         Usuarios
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="usuariosDropdown">
-                        <li><a class="dropdown-item" href="#">Lista de usuarios</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Crear nuevo usuario</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#">Editar usuario</a></li>
-                        <li><a class="dropdown-item" href="#">Asignar roles</a></li>
+                        <li><a class="dropdown-item" href="usuarios/usuario.php">Lista de usuarios</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -100,16 +95,12 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="reportesDropdown">
                         <li>
-                            <a class="dropdown-item" href="#">Reporte de actividades por proyecto</a>
+                            <a class="dropdown-item" href="crud_actividades/reportes.php">Reporte de actividades por
+                                proyecto</a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Reporte de horas utilizadas</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Reporte de equipos</a>
-                        </li>
-                    </ul>
                 </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </div>
