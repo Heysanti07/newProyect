@@ -14,14 +14,23 @@
                 <h2 class="mb-4 text-center text-primary">Listado de Equipos</h2>
                 <table class="table table-bordered table-striped table-hover table-info">
                     <tr class="bg-primary text-white">
-                        <th>Nombre equipo</th>
-                        <th>Nombre del proyecto</th>
+                        <th>fecha de creación</th>
+                        <th>descripción</th>
+                        <th>Estado del equipo</th>
                         <th>Integrantes</th>
-                        <th>Jefe de equipo</th>
-                        <th>acciones</th>
+                        <th>Proyecto</th>
                     </tr>
                     <?php
-
+                    $conexion = mysqli_connect("localhost","root","","gestor_proyectos") or die ("Error de conexion de BD");
+                    $consulta = "SELECT * FROM equipos";
+                    $resultado = mysqli_query($conexion,$consulta);
+                    while($row = mysqli_fetch_row($resultado)){
+                        echo "<tr><td>".$row[1]."</td>";
+                        echo "<td>".$row[2]."</td>";
+                        echo "<td>".$row[3]."</td>";
+                        echo "<td>".$row[4]."</td>";
+                        echo "<td>".$row[5]."</td>";  
+                    }
                     ?>
                 </table>
                 <br>
@@ -29,6 +38,13 @@
                     <div class="row g-3 align-items-center">
                         <div class="col-md-4">
                             <button id="guardar" name="guardar" type="submit" class="btn btn-primary">Agregar equipo</button>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                <div class="row g-3 align-items-center">
+                        <div class="col-md-4">
+                            <button id="editar" name="borrar" type="submit" class="btn btn-primary">Agregar equipo</button>
                         </div>
                     </div>
                 </form>

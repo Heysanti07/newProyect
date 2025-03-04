@@ -19,11 +19,11 @@
                     <div class="card-body">
                         <form action="#">
                             <div class="mb-3">
-                                <label for="nombre_p" class="form-label text-primary">Nombre del equipo:</label>
+                                <label for="nombre_p" class="form-label text-primary">Fechas de creacion:</label>
                                 <input type="text" name="nombre_p" id="nombre_p" class="form-control" placeholder="Nombre del equipo">
                             </div>
                             <div class="mb-3">
-                                <label for="proyecto" class="form-label text-primary">Proyecto:</label>
+                                <label for="proyecto" class="form-label text-primary">descripción:</label>
                                 <select name="proyecto" id="proyecto" class="form-select">
                                     <option selected>Elige tu proyecto</option>
                                     <option value="1">Proyecto 1</option>
@@ -41,7 +41,7 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="fecha_i" class="form-label text-primary">Fecha de creación:</label>
+                                <label for="fecha_i" class="form-label text-primary">Proyecto:</label>
                                 <input type="date" name="fecha_i" id="fecha_i" class="form-control">
                             </div>
                             <div class="text-center">
@@ -55,6 +55,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
