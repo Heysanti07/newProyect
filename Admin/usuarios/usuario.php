@@ -10,10 +10,12 @@
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <?php include '../navbar/nav.php'; ?>
-
+            <a class="navbar-brand" href="#">Gestión de Usuarios</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
 
@@ -32,23 +34,25 @@
                     <th>ID</th>
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Rol</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 $usuarios = [
-                    ['id' => 1, 'nombre' => 'Memo', 'email' => 'memo@example.com'],
-                    ['id' => 2, 'nombre' => 'Alejandra', 'email' => 'alejandra@example.com'],
-                    ['id' => 3, 'nombre' => 'Carlos', 'email' => 'carlos@example.com'],
+                    ['id' => 1, 'nombre' => 'Memo', 'email' => 'memo@example.com', 'rol' => 'Administrador'],
+                    ['id' => 2, 'nombre' => 'Alejandra', 'email' => 'alejandra@example.com', 'rol' => 'Usuario'],
+                    ['id' => 3, 'nombre' => 'Carlos', 'email' => 'carlos@example.com', 'rol' => 'Líder'],
                 ];
                 foreach ($usuarios as $usuario) {
                     echo "<tr>
                             <td>{$usuario['id']}</td>
                             <td>{$usuario['nombre']}</td>
                             <td>{$usuario['email']}</td>
+                            <td>{$usuario['rol']}</td>
                             <td>
-                                <button class='btn btn-warning btn-sm'>Editar</button>
+                                <button class='btn btn-warning btn-sm' onclick='openEditModal({$usuario['id']}, \"{$usuario['nombre']}\", \"{$usuario['email']}\", \"{$usuario['rol']}\")'>Editar</button>
                                 <button class='btn btn-danger btn-sm'>Eliminar</button>
                             </td>
                           </tr>";
@@ -58,28 +62,34 @@
         </table>
     </div>
 
-    <div id="userModal" class="modal fade" tabindex="-1" aria-hidden="true">
+    <!-- Modal de Edición -->
+    <div id="editUserModal" class="modal fade" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Crear Nuevo Usuario</h5>
+                    <h5 class="modal-title">Editar Usuario</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="createUserForm">
+                    <form id="editUserForm">
+                        <input type="hidden" id="editUserId">
                         <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            <label for="editNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="editNombre" name="nombre" required>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <label for="editEmail" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="editEmail" name="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <label for="editRol" class="form-label">Rol</label>
+                            <select class="form-control" id="editRol" name="rol" required>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Usuario">Usuario</option>
+                                <option value="Líder">Líder</option>
+                            </select>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Crear Usuario</button>
+                        <button type="submit" class="btn btn-primary w-100">Guardar Cambios</button>
                     </form>
                 </div>
             </div>
@@ -94,6 +104,15 @@
             let name = row.cells[1].textContent.toLowerCase();
             row.style.display = name.includes(input) ? '' : 'none';
         });
+    }
+
+    function openEditModal(id, nombre, email, rol) {
+        document.getElementById('editUserId').value = id;
+        document.getElementById('editNombre').value = nombre;
+        document.getElementById('editEmail').value = email;
+        document.getElementById('editRol').value = rol;
+        let editModal = new bootstrap.Modal(document.getElementById('editUserModal'));
+        editModal.show();
     }
     </script>
 
