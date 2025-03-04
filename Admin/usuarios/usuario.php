@@ -10,12 +10,10 @@
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
         <div class="container">
-            <a class="navbar-brand" href="#">Gestión de Usuarios</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <?php include '../navbar/nav.php'; ?>
         </div>
     </nav>
 
