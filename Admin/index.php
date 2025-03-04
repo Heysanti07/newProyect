@@ -15,7 +15,7 @@
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
         <div class="container">
-            <?php include '/navbar/nav.php'; ?>
+            <?php include 'navbar/nav.php'; ?>
         </div>
     </nav>
 
