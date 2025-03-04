@@ -44,7 +44,7 @@
                 <form>
                 <div class="row g-3 align-items-center">
                         <div class="col-md-4">
-                            <button id="editar" name="borrar" type="submit" class="btn btn-primary">Agregar equipo</button>
+                            <button id="editar" name="editar" type="submit" class="btn btn-primary">Agregar equipo</button>
                         </div>
                     </div>
                 </form>

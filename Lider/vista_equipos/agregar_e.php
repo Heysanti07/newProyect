@@ -20,16 +20,12 @@
                         <form action="#">
                             <div class="mb-3">
                                 <label for="nombre_p" class="form-label text-primary">Fechas de creacion:</label>
-                                <input type="text" name="nombre_p" id="nombre_p" class="form-control" placeholder="Nombre del equipo">
+                                <input type="date" name="fecha_i" id="fecha_i" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="proyecto" class="form-label text-primary">descripción:</label>
-                                <select name="proyecto" id="proyecto" class="form-select">
-                                    <option selected>Elige tu proyecto</option>
-                                    <option value="1">Proyecto 1</option>
-                                    <option value="2">Proyecto 2</option>
-                                    <option value="3">Proyecto 3</option>
-                                </select>
+                                <input type="text" name="descripcion" id="descripcion" class="form-control" placeholder="descripcion">
+                                
                             </div>
                             <div class="mb-3">
                                 <label for="integrante" class="form-label text-primary">Integrantes:</label>
@@ -42,7 +38,12 @@
                             </div>
                             <div class="mb-3">
                                 <label for="fecha_i" class="form-label text-primary">Proyecto:</label>
-                                <input type="date" name="fecha_i" id="fecha_i" class="form-control">
+                                <select name="proyecto" id="proyecto" class="form-select">
+                                    <option selected>Elige tu proyecto</option>
+                                    <option value="1">Proyecto 1</option>
+                                    <option value="2">Proyecto 2</option>
+                                    <option value="3">Proyecto 3</option>
+                                </select>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Crear equipo</button>
