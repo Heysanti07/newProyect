@@ -14,29 +14,57 @@
       <div class="row justify-content-center">
         <div class="col-md-4">
           <h2 class="text-center">Registro</h2>
-          <?php if ($mensaje): ?>
-          <div class="alert alert-danger"><?= $mensaje ?></div>
-          <?php endif; ?>
-          <form method="POST">
+          
+          <form method="POST" action="registrar_usuarios.php" >
+
             <div class="mb-3">
-              <label class="form-label">Usuario</label>
-              <input type="text" name="usuario" class="form-control" required />
+              <label class="form-label">Nombre</label>
+              <input type="text" name="n_usuario" class="form-control" required />
             </div>
+
+            <div class="mb-3">
+              <label class="form-label">Apellido Paterno</label>
+              <input type="text" name="a_p" class="form-control" required/>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Apellido Materno</label>
+              <input type="text" name="a_m" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Edad</label>
+              <input type="number" name="edad" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Correo</label>
+              <input type="email" name="correo" class="form-control" required />
+            </div>
+
             <div class="mb-3">
               <label class="form-label">Contraseña</label>
-              <input
-                type="password"
-                name="password"
-                class="form-control"
-                required
-              />
+              <input type="password" name="contrasena" class="form-control" required />
             </div>
-            <button type="submit" name="register" class="btn btn-primary w-100">
+
+            <div class="mb-3">
+            <input type="hidden" value="1" name="id_rol" >
+            </div>
+
+            <!-- <div class="mb-3">
+                <select name="id_rol">
+              <option value="1">Usuario</option>
+              <option value="2">Admin</option>
+            </select>
+            </div> -->
+
+            <button type="submit" name="send" class="btn btn-primary w-100" href="inicio.html" value="Guardar">
               Registrarse
             </button>
+
           </form>
           <p class="text-center mt-3">
-            ¿Ya tienes cuenta? <a href="index.html">Inicia sesión aquí</a>
+            ¿Ya tienes cuenta? <a href="index.php">Inicia sesión aquí</a>
           </p>
         </div>
       </div>
