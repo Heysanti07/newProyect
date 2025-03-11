@@ -10,6 +10,13 @@
 </head>
 
 <body class="bg-light">
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+        <div class="container">
+            <?php include '../navbar/nav.php'; ?>
+        </div>
+    </nav>
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -24,12 +31,14 @@
                         <form action="index.php">
                             <div class="mb-4">
                                 <label class="form-label text-muted mb-2">Descripción</label>
-                                <textarea class="form-control form-control-lg" rows="3" placeholder="Descripción del equipo"></textarea>
+                                <textarea class="form-control form-control-lg" rows="3"
+                                    placeholder="Descripción del equipo"></textarea>
                             </div>
 
                             <div class="mb-4">
                                 <label class="form-label text-muted mb-2">Estado del equipo</label>
-                                <input type="text" name="estado_equipo"  class="form-control form-control-lg" placeholder="Estado actual del equipo">
+                                <input type="text" name="estado_equipo" class="form-control form-control-lg"
+                                    placeholder="Estado actual del equipo">
                             </div>
 
                             <div class="mb-4">

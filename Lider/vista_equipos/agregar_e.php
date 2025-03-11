@@ -10,6 +10,13 @@
 </head>
 
 <body class="bg-light">
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+        <div class="container">
+            <?php include '../navbar/nav.php'; ?>
+        </div>
+    </nav>
     <div class="container py-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
@@ -29,7 +36,8 @@
 
                             <div class="mb-4">
                                 <label class="form-label text-muted mb-2">Descripción</label>
-                                <textarea class="form-control form-control-lg" rows="3" placeholder="Descripción del equipo"></textarea>
+                                <textarea class="form-control form-control-lg" rows="3"
+                                    placeholder="Descripción del equipo"></textarea>
                             </div>
 
                             <div class="mb-4">
@@ -53,9 +61,9 @@
                             </div>
 
                             <div class="d-grid mt-4">
-                                <button type="submit" class="btn btn-primary btn-lg py-3">
+                                <a type="submit" class="btn btn-primary btn-lg py-3" href="vista_equipos/agregar_e.php">
                                     <i class="bi bi-save-fill me-2"></i>Guardar Equipo
-                                </button>
+                                </a>
                             </div>
                         </form>
                     </div>
